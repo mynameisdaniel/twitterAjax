@@ -210,8 +210,8 @@ $.InfiniteTweets.prototype.insertTweets = function (tweets){
       this.$ul.append($li);
     }.bind(this))
     var $lastTweet = this.$ul.find("li:last-child");
-    debugger
-    console.log($lastTweet.created_at);
+    var tweetStr = $lastTweet.text();
+    this.maxCreatedAt = JSON.parse(tweetStr).created_at;
 }
 
 $.InfiniteTweets.prototype.fetchTweets = function ( event ){
